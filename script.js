@@ -1,7 +1,23 @@
 // Håndtering af formularindsendelse (Nyhedsbrev)
+let userInfo = {
+    name: '',
+    email: ''
+}
+
+let userInfos = []
+
 document.getElementById('newsletter-form').addEventListener('submit', function(event) {
     event.preventDefault();
-    alert("Tak for din tilmelding!");
+    userInfo.name = document.getElementById('newsletter-name').value;
+    userInfo.email = document.getElementById('newsletter-email').value;
+
+    if (userInfo.name.length > 0 && userInfo.email.length > 0) {
+        console.log(`Tilmelding af nyhed, navn: ${userInfo.name}, email: ${userInfo.email}`)
+
+        userInfos.push({name: userInfo.name, email: userInfo.email})
+        console.log(userInfos)
+    }
+    alert(`Tak for din tilmelding ${userInfo.name}!`);
 });
 
 // Galleri Navigation
