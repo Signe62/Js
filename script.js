@@ -90,3 +90,38 @@ function classifyBMI(bmi) {
     // Fallback, hvis intet matcher (burde aldrig ske)
     return "Ukendt";
 }
+
+
+    // SLIDESHOW
+
+    let slideIndex = 1;
+showSlides(slideIndex);
+
+// Funktion til at vise slides, der kan navigeres med pile
+function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("slide-image");
+
+    // Hvis n er større end antallet af slides, start fra første slide
+    if (n > slides.length) { 
+        slideIndex = 1;
+    }
+    // Hvis n er mindre end 1, gå til sidste slide
+    if (n < 1) {
+        slideIndex = slides.length;
+    }
+
+    // Skjul alle slides
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+
+    // Vis den aktuelle slide
+    slides[slideIndex-1].style.display = "block";  
+}
+
+// Funktion til at skifte slide manuelt med pile
+function changeSlide(n) {
+    showSlides(slideIndex += n);
+}
+
