@@ -1,11 +1,11 @@
-// Placeholder for form submission handling
+// Håndtering af formularindsendelse (Log ind)
 document.getElementById('newsletter-form').addEventListener('submit', function(event) {
     event.preventDefault();
     alert("Tak for din tilmelding!");
 });
 
 
-
+// Galleri Navigation
 let selectedOption = '';
 
 function selectOption(option) {
@@ -39,7 +39,7 @@ function prevSlide() {
     showSlide(currentSlide - 1);
 }
 
-// Automatisk afspilning
+// Automatisk afspilning af galleri
 setInterval(() => {
     nextSlide();
 }, 5000);
