@@ -9,15 +9,26 @@ body {
 /* Header og Navigation */
 nav {
     display: flex;
-    justify-content: space-between; /* Gør plads til logo til venstre */
+    justify-content: space-between;
     align-items: center;
     background-color: #28a745; /* Grøn baggrund */
-    padding: 20px 20px; /* Tilføjer lidt indvendig afstand */
+    padding: 20px 20px;
     position: relative;
 }
 
 .logo img {
     height: 40px; /* Juster logoets højde */
+}
+
+.nav-text {
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    flex: 1; /* Sørger for, at teksten er centreret */
+}
+
+.nav-text strong {
+    font-weight: bold;
 }
 
 .menu-icon {
@@ -47,7 +58,6 @@ nav {
     background-color: #28a745; /* Grøn baggrund */
     display: none; /* Skjuler menuen som standard */
     z-index: 1;
-    border-radius: 5px;
 }
 
 .nav-links.show {
@@ -79,7 +89,6 @@ nav {
         top: 50px;
         right: 0;
         width: 300px;
-        border-radius: 5px;
     }
 
     .nav-links.show {
