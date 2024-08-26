@@ -253,6 +253,17 @@ body {
 }
 
 /* BMI Beregner Sektion */
+
+.BMI {
+    font-family: Arial, sans-serif;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
 .bmi-calculator input, .bmi-calculator button {
     width: 100%;
     padding: 10px;
