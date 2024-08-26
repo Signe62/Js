@@ -8,79 +8,79 @@
 </head>
 <body>
 
-    <!-- Forside Sektion -->
+    <!-- Navigation og Header Sektion -->
     <header>
-        <div class="header-content">
-            <img src="logo-placeholder.png" alt="Logo" class="logo">
-            <button class="menu-button">☰</button>
+        <div class="header-container">
+            <img src="logo-placeholder.png" alt="Per Larsen Coaching Logo" class="site-logo">
+            <button class="menu-toggle">☰</button>
         </div>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <img src="trainer-placeholder.png" alt="Træner Billede" class="trainer-image">
-            <div class="hero-right">
+    <!-- Hero Sektion -->
+    <section class="intro-section">
+        <div class="intro-container">
+            <img src="trainer-placeholder.png" alt="Træner Billede" class="intro-image">
+            <div class="intro-content">
                 <h1>Vægttab og sund livsstil gjort let</h1>
                 <p><strong>30 års uddannelse og erfaring</strong> til at hjælpe dig sikkert i mål med dit vægttab eller livsstilsændring</p>
-                <div class="rating">⭐⭐⭐⭐⭐ 4,6 på TrustPilot</div>
-                <div class="progress-bar"></div>
+                <div class="trustpilot-rating">⭐⭐⭐⭐⭐ 4,6 på TrustPilot</div>
+                <div class="progress-indicator"></div>
                 <h2>Hvad ønsker du hjælp til?</h2>
-                <div class="options">
+                <div class="option-buttons">
                     <button onclick="selectOption('Vægttab/stram op')">Vægttab/stram op</button>
                     <button onclick="selectOption('Power Woman')">Power Woman</button>
                     <button onclick="selectOption('Parforløb')">Parforløb</button>
                 </div>
-                <button class="continue-button" id="continue-button" disabled>Fortsæt →</button>
+                <button class="proceed-button" id="proceed-button" disabled>Fortsæt →</button>
             </div>
         </div>
     </section>
 
     <!-- Galleri Sektion -->
-    <section class="gallery-section">
+    <section class="testimonial-gallery">
         <h1>Vi har hjulpet over 2000 danskere</h1>
-        <div class="gallery-container">
-            <button class="gallery-nav prev" onclick="prevSlide()">←</button>
-            <div class="gallery">
-                <div class="gallery-item">
+        <div class="gallery-wrapper">
+            <button class="gallery-button prev" onclick="prevSlide()">←</button>
+            <div class="gallery-slides">
+                <div class="testimonial-slide">
                     <img src="image1-placeholder.png" alt="Resultat 1">
-                    <div class="caption">-23 kg. – Mor til 2</div>
+                    <div class="testimonial-caption">-23 kg. – Mor til 2</div>
                 </div>
-                <div class="gallery-item">
+                <div class="testimonial-slide">
                     <img src="image2-placeholder.png" alt="Resultat 2">
-                    <div class="caption">-28 kg. under PowerWoman</div>
+                    <div class="testimonial-caption">-28 kg. under PowerWoman</div>
                 </div>
-                <div class="gallery-item">
+                <div class="testimonial-slide">
                     <img src="image3-placeholder.png" alt="Resultat 3">
-                    <div class="caption">-13 kg. på 26 uger</div>
+                    <div class="testimonial-caption">-13 kg. på 26 uger</div>
                 </div>
             </div>
-            <button class="gallery-nav next" onclick="nextSlide()">→</button>
+            <button class="gallery-button next" onclick="nextSlide()">→</button>
         </div>
     </section>
 
-
     <!-- Footer Sektion -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-left">
+        <div class="footer-container">
+            <div class="footer-logo-section">
                 <img src="logo-placeholder.png" alt="Per Larsen Coaching Logo">
                 <h2>Per Larsen Coaching</h2>
-                <div class="social-icons">
+                <div class="social-links">
                     <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
                     <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
                     <a href="#"><img src="tiktok-icon.png" alt="TikTok"></a>
                 </div>
             </div>
-            <div class="footer-center">
+            <div class="newsletter-section">
                 <h3>Tilmeld dig mit nyhedsbrev</h3>
                 <p>Tilmeld dig mit nyhedsbrev allerede idag og modtag opskrifter, træningsvideoer og meget mere.</p>
                 <form id="newsletter-form">
-                    <input type="text" placeholder="Navn" id="name">
-                    <input type="email" placeholder="Email" id="email">
+                    <input type="text" placeholder="Navn" id="newsletter-name">
+                    <input type="email" placeholder="Email" id="newsletter-email">
                     <button type="submit">Send</button>
                 </form>
             </div>
-            <div class="footer-right">
+            <div class="contact-section">
                 <p>Gugvej 140, 9210 Aalborg SØ, Danmark</p>
                 <p>CVR: 42425567</p>
                 <a href="#">Handelsbetingelser</a>
@@ -93,38 +93,39 @@
         </div>
     </footer>
 
-    <!--BMI beregner--> 
-    <h2>BMI Beregner</h2>
-    <form id="bmiForm">
-        <label for="height">Højde (i centimeter):</label>
-        <input type="number" id="height" placeholder="Indtast din højde" required>
+    <!-- BMI Beregner -->
+    <section class="bmi-calculator">
+        <h2>BMI Beregner</h2>
+        <form id="bmiForm">
+            <label for="height">Højde (i centimeter):</label>
+            <input type="number" id="height" placeholder="Indtast din højde" required>
 
-        <label for="weight">Vægt (i kilogram):</label>
-        <input type="number" id="weight" placeholder="Indtast din vægt" required>
+            <label for="weight">Vægt (i kilogram):</label>
+            <input type="number" id="weight" placeholder="Indtast din vægt" required>
 
-        <button type="button" onclick="calculateAndClassifyBMI()">Beregn BMI</button>
-    </form>
+            <button type="button" onclick="calculateAndClassifyBMI()">Beregn BMI</button>
+        </form>
 
-    <div id="result" class="result"></div>
+        <div id="bmi-result" class="bmi-result"></div>
+    </section>
 
-
-        <!--SlideShow--> 
-
-    <div class="header">
-        <h1>Alt-i-én platform, hvor du altid<br> 
-            har os ved hånden</h1>
-    </div>
-
-    <div class="slideshow-container">
-        <div class="slideshow">
-            <img src="images/pic1.png" alt="Slideshow Image" class="slide-image">
-            <img src="images/pic2.png" alt="Slideshow Image" class="slide-image">
-            <img src="images/pic3.png" alt="Slideshow Image" class="slide-image">
-            <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
-            <a class="next" onclick="changeSlide(1)">&#10095;</a>
+    <!-- Slideshow Sektion -->
+    <section class="slideshow-section">
+        <div class="slideshow-header">
+            <h1>Alt-i-én platform, hvor du altid<br> 
+                har os ved hånden</h1>
         </div>
-    </div>
 
+        <div class="slideshow-wrapper">
+            <div class="slideshow-content">
+                <img src="images/pic1.png" alt="Slideshow Image" class="slide-image">
+                <img src="images/pic2.png" alt="Slideshow Image" class="slide-image">
+                <img src="images/pic3.png" alt="Slideshow Image" class="slide-image">
+                <a class="slide-prev" onclick="changeSlide(-1)">&#10094;</a>
+                <a class="slide-next" onclick="changeSlide(1)">&#10095;</a>
+            </div>
+        </div>
+    </section>
 
 </body>
 </html>
