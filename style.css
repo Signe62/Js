@@ -7,24 +7,84 @@ body {
 }
 
 /* Header og Navigation */
-.header-container {
-    background-color: #3db34e;
-    padding: 10px 20px;
+nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Gør plads til logo til venstre */
     align-items: center;
+    background-color: #28a745; /* Grøn baggrund */
+    padding: 20px 20px; /* Tilføjer lidt indvendig afstand */
+    position: relative;
 }
 
-.site-logo {
-    height: 50px;
+.logo img {
+    height: 40px; /* Juster logoets højde */
 }
 
-.menu-toggle {
-    font-size: 24px;
-    color: white;
-    background: none;
-    border: none;
+.menu-icon {
+    display: flex;
+    flex-direction: column;
     cursor: pointer;
+    z-index: 2; /* Sørger for, at menuikonet er øverst */
+}
+
+.menu-icon .line {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+}
+
+.nav-links {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    right: 0; /* Menuen vises fra højre side */
+    width: 300px; /* Fast bredde */
+    background-color: #28a745; /* Grøn baggrund */
+    display: none; /* Skjuler menuen som standard */
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.nav-links.show {
+    display: flex; /* Viser menuen, når burgerikonet klikkes */
+}
+
+.nav-links li {
+    margin: 15px 0;
+    text-align: center;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Desktop-specifik styling */
+@media (min-width: 768px) {
+    .menu-icon {
+        display: flex; /* Sørger for, at burgerikonet stadig vises */
+    }
+
+    .nav-links {
+        display: none; /* Menuen skjules indtil burgerikonet klikkes */
+        position: absolute;
+        flex-direction: column;
+        background-color: #28a745;
+        top: 50px;
+        right: 0;
+        width: 300px;
+        border-radius: 5px;
+    }
+
+    .nav-links.show {
+        display: flex; /* Menuen vises, når burgerikonet klikkes */
+    }
 }
 
 /* Hero Sektion */

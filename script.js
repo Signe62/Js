@@ -103,3 +103,46 @@ function showSlides(n) {
 function changeSlide(n) {
     showSlides(slideIndex += n);
 }
+
+// Variabel til at gemme menuens tilstand
+let menuOpen = false;
+
+// Array der indeholder menupunkterne
+const menuItems = [
+    "Hjem",
+    "Om",
+    "Vægttabsgaranti",
+    "Kalorie beregner",
+    "Kun planer"
+];
+
+// Objekt der gemmer ekstra information om menuen
+const menuInfo = {
+    openedTimes: 0,
+    itemsCount: menuItems.length
+};
+
+// Event listener for menuikonet
+document.getElementById("menu-icon").addEventListener("click", function() {
+    var navLinks = document.getElementById("nav-links");
+    navLinks.classList.toggle("show");
+
+    // If-else for at ændre menuens tilstand
+    if (menuOpen) {
+        console.log("Menuen lukkes.");
+        menuOpen = false;
+    } else {
+        console.log("Menuen åbnes.");
+        menuOpen = true;
+        menuInfo.openedTimes++; // Operator til at øge tælleren
+    }
+
+    // Loop gennem menuItems-arrayet
+    for (let i = 0; i < menuItems.length; i++) {
+        console.log(`Menupunkt ${i + 1}: ${menuItems[i]}`);
+    }
+
+    // Udskrivning af menuInfo objektet
+    console.log(`Menuen er blevet åbnet ${menuInfo.openedTimes} gange.`);
+    console.log(`Menuen indeholder ${menuInfo.itemsCount} punkter.`);
+});
