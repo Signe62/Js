@@ -40,11 +40,9 @@ function calculateAndClassifyBMI() {
     height = height / 100;
 
     let bmi = weight / (height * height);
-    bmi = bmi.toFixed(2);
+    bmi = bmi.toFixed(2); // Decimal tal ikke overgår 2 0.xx
 
-    let classification = classifyBMI(bmi);
-
-    let resultText = "Dit BMI er: " + bmi + " (" + classification + ")";
+    let resultText = "Dit BMI er: " + bmi + " (" + classifyBMI(bmi) + ")";
     document.getElementById("bmi-result").innerText = resultText;
 }
 
@@ -74,12 +72,17 @@ showSlides(slideIndex);
 function showSlides(n) {
     let slides = document.getElementsByClassName("slide-image");
 
-    if (n > slides.length) { 
-        slideIndex = 1;
+    if (slides.length === 0) {
+        console.log("Ingen eksisterenede slides."); // Debug
+    } else {
+        if (n > slides.length) { 
+            slideIndex = 1;
+        }
+        if (n < 1) {
+            slideIndex = slides.length;
+        }
     }
-    if (n < 1) {
-        slideIndex = slides.length;
-    }
+
 
     for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";  
