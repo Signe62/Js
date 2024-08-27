@@ -16,6 +16,8 @@ document.getElementById('newsletter-form').addEventListener('submit', function(e
 
         userInfos.push({name: userInfo.name, email: userInfo.email})
         console.log(userInfos)
+    } else if (userInfo.name.length == 0 && userInfo.email.length == 0) {
+        console.log('Navn eller Email er tomt!')
     }
     alert(`Tak for din tilmelding ${userInfo.name}!`);
 });
@@ -29,35 +31,6 @@ function selectOption(option) {
     document.getElementById('proceed-button').style.backgroundColor = '#3db34e';
     alert(`Du har valgt: ${option}`);
 }
-
-// Slideshow Funktionalitet
-let currentSlide = 0;
-
-function showSlide(index) {
-    const gallery = document.querySelector('.gallery-slides');
-    const totalItems = document.querySelectorAll('.testimonial-slide').length;
-    if (index >= totalItems) {
-        currentSlide = 0;
-    } else if (index < 0) {
-        currentSlide = totalItems - 1;
-    } else {
-        currentSlide = index;
-    }
-    gallery.style.transform = `translateX(-${currentSlide * 320}px)`;
-}
-
-function nextSlide() {
-    showSlide(currentSlide + 1);
-}
-
-function prevSlide() {
-    showSlide(currentSlide - 1);
-}
-
-// Automatisk afspilning af galleri
-setInterval(() => {
-    nextSlide();
-}, 5000);
 
 // BMI Beregner Funktion
 function calculateAndClassifyBMI() {
@@ -99,7 +72,6 @@ let slideIndex = 1;
 showSlides(slideIndex);
 
 function showSlides(n) {
-    let i;
     let slides = document.getElementsByClassName("slide-image");
 
     if (n > slides.length) { 
@@ -109,7 +81,7 @@ function showSlides(n) {
         slideIndex = slides.length;
     }
 
-    for (i = 0; i < slides.length; i++) {
+    for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";  
     }
 
