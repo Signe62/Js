@@ -32,6 +32,8 @@ function proceed() {
         for (let i = 0; i < document.getElementsByClassName("selectButton").length; i++) {
             document.getElementsByClassName("selectButton")[i].textContent = question2[i];
         }
+
+        document.getElementById("option-header").textContent = "Hvor mange er der i husstanden?";
     } else {
         console.log("No available questions to proceed")
     }
