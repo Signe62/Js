@@ -25,11 +25,22 @@ document.getElementById('newsletter-form').addEventListener('submit', function(e
 // Galleri Navigation
 let selectedOption = '';
 
+let question2 = ["1", "2", "3"];
+
+function proceed() {
+    if (question2.length != 0) {
+        for (let i = 0; i < document.getElementsByClassName("selectButton").length; i++) {
+            document.getElementsByClassName("selectButton")[i].textContent = question2[i];
+        }
+    } else {
+        console.log("No available questions to proceed")
+    }
+}
+
 function selectOption(option) {
     selectedOption = option;
     document.getElementById('proceed-button').disabled = false;
     document.getElementById('proceed-button').style.backgroundColor = '#3db34e';
-    alert(`Du har valgt: ${option}`);
 }
 
 // BMI Beregner Funktion

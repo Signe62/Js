@@ -52,7 +52,8 @@ nav {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 50px;
+    top: 75px;
+    border-radius: 5px;
     right: 0; /* Menuen vises fra højre side */
     width: 300px; /* Fast bredde */
     background-color: #28a745; /* Grøn baggrund */
@@ -86,9 +87,10 @@ nav {
         position: absolute;
         flex-direction: column;
         background-color: #28a745;
-        top: 50px;
+        top: 75px;
         right: 0;
         width: 300px;
+        border-radius: 5px;
     }
 
     .nav-links.show {
@@ -165,11 +167,11 @@ nav {
     color: white;
     border: none;
     padding: 15px;
-    cursor: not-allowed;
     font-size: 16px;
     width: 100%;
     border-radius: 5px;
     margin-top: 20px;
+    cursor: pointer;
 }
 
 /* Footer Sektion */
