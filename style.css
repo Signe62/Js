@@ -382,3 +382,61 @@ nav {
     background-color: #45a049;
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
 }
+
+/* Mål Progression Tracker Sektion */
+#goal-tracker {
+    background-color: white;
+    padding: 40px 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form styling */
+#goalForm {
+    display: flex;
+    flex-direction: column;
+}
+
+#goalForm label {
+    margin: 10px 0 5px;
+    font-size: 16px;
+}
+
+#goalForm input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+#goalForm button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#goalForm button:hover {
+    background-color: #45a049;
+}
+
+/* Progression list styling */
+#progressList {
+    list-style: none;
+    padding: 0;
+}
+
+#progressList li {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    font-size: 16px;
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mål progression</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+    <!-- Navigation og Header Sektion -->
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html"><img src="./img/logo.png" alt="Logo"></a>
+            </div>
+            <div class="nav-text">
+                Gør som <strong>mere end 2000 danskere</strong>
+            </div>
+            <div class="menu-icon" id="menu-icon">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Hjem</a></li>
+                <li><a href="#">Om</a></li>
+                <li><a href="#">Vægttabsgaranti</a></li>
+                <li><a href="#">Kalorie beregner</a></li>
+                <li><a href="#">Kun planer</a></li>
+                <li><a href="progression.html">Mål progression</a></li>
+            </ul>
+        </nav>
+    </header>
+
+ <!-- Mål Progression Tracker Sektion -->
+<section id="goal-tracker">
+    <h2>Mål din træningsprogression her</h2>
+    <form id="goalForm">
+        <label for="progressDate">Dato:</label>
+        <input type="date" id="progressDate" required>
+        
+        <label for="progressWeight">Vægt (kg):</label>
+        <input type="number" id="progressWeight" placeholder="Indtast vægt" required>
+        
+        <label for="progressWaist">Taljemål (cm):</label>
+        <input type="number" id="progressWaist" placeholder="Indtast taljemål" required>
+        
+        <button type="button" onclick="addProgress()">Tilføj Måling</button>
+    </form>
+    
+    <h3>Din progression:</h3>
+    <ul id="progressList"></ul>
+</section>
+
+ <!-- Footer Sektion -->
+ <footer>
+    <div class="footer-content">
+        <div class="footer-left">
+            <a href="#"><img src="./img/logo.png" alt="Logo"></a>
+            <h2>Per Larsen Coaching</h2>
+            <div class="social-icons">
+                <a href="#"><img src="img/FB.png"  alt="Facebook"></a>
+                <a href="#"><img src="img/insta.png" alt="Instagram"></a>
+                <a href="#"><img src="img/tiktok.png" alt="TikTok"></a>
+            </div>
+        </div>
+        <div class="footer-center">
+            <h3>Tilmeld dig mit nyhedsbrev</h3>
+            <p>Tilmeld dig mit nyhedsbrev allerede idag og modtag opskrifter, træningsvideoer og meget mere.</p>
+            <form id="newsletter-form">
+                <input type="text" placeholder="Navn" id="newsletter-name">
+                <input type="email" placeholder="Email" id="newsletter-email">
+                <button type="submit">Send</button>
+            </form>
+        </div>
+        <div class="footer-right">
+            <p>Gugvej 140, 9210 Aalborg SØ, Danmark</p>
+            <p>CVR: 42425567</p>
+            <a href="#">Handelsbetingelser</a>
+            <a href="#">Privatlivspolitik</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2024 – Per Larsen Coaching All rights reserved</p>
+        <p>Powered by <a href="#">Lenus.io</a></p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+
+  
+</body>
+</html>
