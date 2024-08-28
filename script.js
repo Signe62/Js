@@ -50,7 +50,7 @@ function calculateAndClassifyBMI() {
     let height = document.getElementById("height").value;
     let weight = document.getElementById("weight").value;
 
-    height = height / 100;
+    height = height / 100; 
 
     let bmi = weight / (height * height);
     bmi = bmi.toFixed(2); // Decimal tal ikke overgår 2 0.xx
