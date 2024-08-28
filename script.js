@@ -15,12 +15,18 @@ document.getElementById('newsletter-form').addEventListener('submit', function(e
         console.log(`Tilmelding af nyhed, navn: ${userInfo.name}, email: ${userInfo.email}`)
 
         userInfos.push({name: userInfo.name, email: userInfo.email})
-        console.log(userInfos)
-    } else if (userInfo.name.length == 0 && userInfo.email.length == 0) {
+
+        // Loop gennem userInfos og udskriv hver tilmelding
+        console.log('Liste over alle tilmeldte:')
+        for (let i = 0; i < userInfos.length; i++) {
+            console.log(`Navn: ${userInfos[i].name}, Email: ${userInfos[i].email}`);
+        }
+    } else {
         console.log('Navn eller Email er tomt!')
     }
     alert(`Tak for din tilmelding ${userInfo.name}!`);
 });
+
 
 // Galleri Navigation
 let selectedOption = '';
