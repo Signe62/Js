@@ -129,3 +129,47 @@ document.getElementById("menu-icon").addEventListener("click", function() {
     navLinks.classList.toggle("show");
 
 });
+
+// Funktion til at tilføje og gemme en ny måling
+function addProgress() {
+    // Hent inputværdier fra brugeren
+    const date = document.getElementById('progressDate').value;
+    const weight = document.getElementById('progressWeight').value;
+    const waist = document.getElementById('progressWaist').value;
+
+    // Tjek om alle felter er udfyldt
+    if (date && weight && waist) {
+        // Opret et nyt målingsobjekt
+        const progressEntry = { date, weight, waist };
+
+        // Hent eksisterende målinger fra localStorage, eller opret en tom liste
+        const progressHistory = JSON.parse(localStorage.getItem('progressHistory')) || [];
+        
+        // Tilføj den nye måling til historikken
+        progressHistory.push(progressEntry);
+
+        // Gem den opdaterede målingshistorik i localStorage
+        localStorage.setItem('progressHistory', JSON.stringify(progressHistory));
+
+        // Opdater visningen af målinger
+        displayProgress();
+    } else {
+        // Hvis felter ikke er udfyldt, vis en advarsel
+        alert("Udfyld venligst alle felter.");
+    }
+}
+
+// Funktion til at vise alle gemte målinger
+function displayProgress() {
+    // Hent listeelementet, hvor målingerne skal vises
+    const progressList = document.getElementById('progressList');
+    progressList.innerHTML = ''; // Ryd listen
+
+    // Hent målingshistorik fra localStorage og vis hver måling
+    (JSON.parse(localStorage.getItem('progressHistory')) || []).forEach(entry => {
+        progressList.innerHTML += `<li>Dato: ${entry.date}, Vægt: ${entry.weight} kg, Taljemål: ${entry.waist} cm</li>`;
+    });
+}
+
+// Kald displayProgress når siden indlæses for at vise eksisterende målinger
+window.onload = displayProgress;
