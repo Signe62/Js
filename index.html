@@ -28,7 +28,6 @@
                 <li><a href="#">Vægttabsgaranti</a></li>
                 <li><a href="#">Kalorie beregner</a></li>
                 <li><a href="#">Kun planer</a></li>
-                <li><a href="progression.html">Mål progression</a></li>
             </ul>
         </nav>
     </header>
@@ -83,6 +82,26 @@
             </div>
         </div>
     </section>
+
+     <!-- Mål Progression Tracker Sektion -->
+<section id="goal-tracker">
+    <h2>Mål din træningsprogression her</h2>
+    <form id="goalForm">
+        <label for="progressDate">Dato:</label>
+        <input type="date" id="progressDate" required>
+        
+        <label for="progressWeight">Vægt (kg):</label>
+        <input type="number" id="progressWeight" placeholder="Indtast vægt" required>
+        
+        <label for="progressWaist">Taljemål (cm):</label>
+        <input type="number" id="progressWaist" placeholder="Indtast taljemål" required>
+        
+        <button type="button" onclick="addProgress()">Tilføj Måling</button>
+    </form>
+    
+    <h3>Din progression:</h3>
+    <ul id="progressList"></ul>
+</section>
 
     <!-- Footer Sektion -->
     <footer>
